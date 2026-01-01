@@ -28,16 +28,13 @@
 
 ## 🛠 Architecture
 
-```mermaid
 graph LR
-    A[Google Drive\n(Excel Files)] -->|Polling (30min)| B(Airflow Sensor)
-    B -->|New Files Detected?| C{Trigger Pipeline}
-    C -->|Yes| D[Download Task]
-    D --> E[Data Processing\n(Pandas Pivot/Merge)]
-    E --> F[Styling & Upload\n(Gspread API)]
-    F --> G[Google Sheets\n(Final Report)]
-
-```
+    A["Google Drive<br>(Excel Files)"] -->|"Polling (30min)"| B("Airflow Sensor")
+    B -->|"New Files Detected?"| C{"Trigger Pipeline"}
+    C -->|Yes| D["Download Task"]
+    D --> E["Data Processing<br>(Pandas Pivot/Merge)"]
+    E --> F["Styling & Upload<br>(Gspread API)"]
+    F --> G["Google Sheets<br>(Final Report)"]
 
 ---
 
