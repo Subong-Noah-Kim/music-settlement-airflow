@@ -1,11 +1,4 @@
-
-```markdown
 # 🎵 Music Settlement Automation Pipeline
-
-![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python)
-![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9.0-orange?logo=apache-airflow)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
-![Google Cloud](https://img.shields.io/badge/Google%20Drive%20%26%20Sheets-API-green?logo=google-cloud)
 
 매월 수작업으로 진행하던 **음원 정산 데이터 집계 및 리포팅 업무를 자동화**한 Airflow 파이프라인 프로젝트입니다.
 구글 드라이브에 업로드된 엑셀 파일을 감지하여 데이터를 가공하고, 구글 스프레드시트에 시각화된 리포트를 자동으로 생성합니다.
