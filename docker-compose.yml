@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  airflow:
+    image: apache/airflow:2.9.0-python3.9
+    container_name: airflow-standalone
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./data:/opt/airflow/data
+      - ./keys:/opt/airflow/keys
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - _PIP_ADDITIONAL_REQUIREMENTS=pandas openpyxl gspread oauth2client numpy google-api-python-client
+      - PYTHONPATH=/opt/airflow/dags
+    command: >
+      bash -c " airflow db init && airflow users create --username admin --firstname Subong --lastname Kim --role Admin --email admin@example.com --password admin && (airflow scheduler & airflow webserver)"
+    restart: always

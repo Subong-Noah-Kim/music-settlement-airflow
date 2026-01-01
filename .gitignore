@@ -1,0 +1,23 @@
+# 1. 환경변수 파일 (여기에 비밀번호 다 있음 - 절대 금지)
+.env
+
+# 2. 키 파일들이 들어있는 폴더 (JSON 키 파일 절대 금지)
+keys/
+keys/*.json
+
+# 3. 데이터 및 로그 (용량이 크거나 매번 바뀌는 파일들)
+data/
+logs/
+plugins/__pycache__/
+dags/__pycache__/
+dags/utils/__pycache__/
+
+# 4. OS 및 에디터 설정 파일 (맥북 등)
+.DS_Store
+.idea/
+.vscode/
+
+# 5. Docker 관련 (필요하다면 무시)
+airflow.db
+airflow-worker.pid
+standalone_admin_password.txt
