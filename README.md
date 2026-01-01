@@ -24,19 +24,6 @@
     * 민감한 API Key와 ID는 `.env` 환경변수로 관리하여 코드 노출을 방지합니다.
     * Docker 환경에서 구동되어 OS에 상관없이 일관된 실행 환경을 보장합니다.
 
----
-
-## 🛠 Architecture
-
-graph LR
-    A["Google Drive<br>(Excel Files)"] -->|"Polling (30min)"| B("Airflow Sensor")
-    B -->|"New Files Detected?"| C{"Trigger Pipeline"}
-    C -->|Yes| D["Download Task"]
-    D --> E["Data Processing<br>(Pandas Pivot/Merge)"]
-    E --> F["Styling & Upload<br>(Gspread API)"]
-    F --> G["Google Sheets<br>(Final Report)"]
-
----
 
 ## 📂 Directory Structure
 
